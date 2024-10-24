@@ -42,7 +42,7 @@ if (weatherStatus === "clear") {
 // Verify shuttle launch can proceed based on above conditions
 if (astronautCount <= 7 && astronautStatus === "ready" && totalMassKg <= 850000 && (fuelTempCelsius > -300 || fuelTempCelsius < -150) && fuelLevel === "100%" && weatherStatus === "clear") {
     console.log("All systems are a go! Initiating space shuttle launch sequence.");
-    console.log("Date: " + date + "\nTime: " + time + "\nAstronaut Count: " + astronautCount + "\nCrew Mass: " + crewMassKg + " kg\nFuel Mass: " + fuelMassKg + " kg\nShuttle Mass: " + shuttleMassKg + " kg\nTotal Mass: " + totalMassKg + " kg\nFuel Temperature: " + fuelTempCelsius + "\nWeather Status: " + weatherStatus + " °C\nHave a safe trip astronauts!");
+    console.log("Date: " + date + "\nTime: " + time + "\nAstronaut Count: " + astronautCount + "\nCrew Mass: " + crewMassKg + " kg\nFuel Mass: " + fuelMassKg + " kg\nShuttle Mass: " + shuttleMassKg + " kg\nTotal Mass: " + totalMassKg + " kg\nFuel Temperature: " + fuelTempCelsius + " °C\nWeather Status: " + weatherStatus + "\nHave a safe trip astronauts!");
 } else {
     console.log("ALERT: Abort the launch and begin shutdown operations.");
 }
