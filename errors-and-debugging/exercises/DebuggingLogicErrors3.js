@@ -2,8 +2,8 @@
 // Now consider the second if/else block. 
 // Add another console.log(launchReady) after this block and run the program.
 
-// Given the values for crewStatus and computerStatus, should launchReady be true or false after the check?  
-// Is the program behaving as expected?
+// Given the values for crewStatus and computerStatus, should launchReady be true or false after the check? (Thinking ahead it should be false, however, I think we need to modify the conditional to only run after checking if launchReady is true before we run this next block of code in order to make that possible). Outside of that based on these current conditions it should be true. 
+// Is the program behaving as expected? yes
 
 let launchReady = false;
 // let fuelLevel = 17000;
@@ -25,7 +25,7 @@ if (crewStatus && computerStatus === 'green'){
    console.log('WARNING: Crew or computer not ready!');
    launchReady = false;
 }
-
+console.log(launchReady);
 // if (launchReady) {
 //    console.log('10, 9, 8, 7, 6, 5, 4, 3, 2, 1...');
 //    console.log('Liftoff!');
