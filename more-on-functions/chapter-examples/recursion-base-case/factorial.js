@@ -37,7 +37,7 @@ let isValidNegative = function(negative) {
   } 
   return false
 };
-console.log(factorial(1));
+console.log(factorial(4));
 console.log(isValidInput(0));
 
 //Skill boost! Add validation to return an error message if the function is passed a string, negative number or a decimal value.
