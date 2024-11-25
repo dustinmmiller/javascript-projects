@@ -18,15 +18,47 @@ function holdStatus(arr){
   }
 }
 
+let notSuspicious = function (notFuelLevel) {
+  if (checkFuel(notFuelLevel) === 'green') {
+    return notFuelLevel - 100001;
+  } else if (notFuelLevel === 'yellow') {
+    return notFuelLevel - 50001;
+  } else {
+    return notFuelLevel;
+  }    
+};
+
+let notSusEither = function (arr) {
+  let counter = 0;
+  let liberatedItems = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== 'water' && arr[i] !== 'meal kits' && arr[i] !== 'first-aid kit' && arr[i] !== 'swag' && counter !== 2) {
+      liberatedItems[counter] = arr[i];
+      arr[i] = 'swag';
+      counter++;
+    }
+  }
+  return liberatedItems;
+};
+
+let irs = function(fuelLevel, cargoHold) {
+  let itemsFromCargo = notSusEither(cargoHold);
+  return `Raided ${notSuspicious(fuelLevel)}kg of fuel from the tanks, and stole ${itemsFromCargo[0]} and ${itemsFromCargo[1]} from the cargo hold.`;
+};
+
 let fuelLevel = 200000;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
+console.log(irs(fuelLevel, cargoHold));
+//console.log(notSusEither(cargoHold));
+//console.log(cargoHold);
+//console.log(notSuspicious(fuelLevel));
 console.log("Fuel level: " + checkFuel(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
 
 /* Steal some fuel from the shuttle:
  */
- 
+
 //a). Define an anonymous function and set it equal to a variable with a normal, non-suspicious name. The function takes one parameter. This will be the fuel level on the shuttle.
 
 //b). You must siphon off fuel without alerting the TAs. Inside your function, you want to reduce the fuel level as much as possible WITHOUT changing the color returned by the checkFuel function.
@@ -48,7 +80,7 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 /* Finally, you need to print a receipt for the accountant. Don’t laugh! That genius knows MATH and saves us more gold than you can imagine.
  */
- 
+
 //a). Define a function called irs that can take fuelLevel and cargoHold as arguments.
 	
 //b). Call your anonymous fuel and cargo functions from within irs.
