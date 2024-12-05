@@ -15,4 +15,6 @@ console.log(table[1][1]);
 console.log(`${table[0][2]} ${table[1][0]} ${table[2][1]}`);
 //5) 'table' is an example of a 2-dimensional array. The first “level” contains the element arrays, and the second level holds the name/symbol/mass values. Experiment! Create a 3-dimensional array and print out one entry from each level in the array.
 const threeDimensionalArray = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
-console.log(threeDimensionalArray[0], threeDimensionalArray[0][0], threeDimensionalArray[0][0][0]);
+console.log(threeDimensionalArray[0]);
+console.log(threeDimensionalArray[0][0]);
+console.log(threeDimensionalArray[0][0][0]);
