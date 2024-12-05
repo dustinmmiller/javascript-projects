@@ -68,6 +68,7 @@ let candidateA = {
  };
  
  let crew = [candidateB,candidateD,candidateF];
+ //only made this to give the weight without all the extra decimals from rounding fuel required
  function safetyMarginMass (arr){
   let safetyMargin2 = 0;
   for (let i = 0; i < arr.length; i++){

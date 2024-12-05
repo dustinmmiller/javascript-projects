@@ -12,7 +12,7 @@ function randomSelection(arr){
    console.log(randomSelection(luckyArr));
  }
  let arrC = [randomSelection(happiness), randomSelection(words)];
- console.log(arrC);
+ console.log(arrC); 
  //Experiment with the code above. Try to:
  //a) Print 3 random selections from each array.
  //b) Have the code randomly pick one array, and then print 2 random items from it.
