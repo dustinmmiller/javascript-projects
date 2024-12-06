@@ -43,12 +43,12 @@ describe("transmission processor", function() {
     expect(result.rawData).toBe(-1);
   });
 
-  test("returns -1 for rawData doesnt contain < or >", function() {
+  test("returns -1 if rawData doesnt contain < or >", function() {
     let result = processor("9701::487297403495720912");
     expect(result.rawData).toBe(-1);
   });
 
-  test("returns -1 for rawData contains a value that isn't a number", function() {
+  test("returns -1 if rawData contains a value that isn't a number", function() {
     let result = processor("9701::<487297403495<720912>");
     expect(result.rawData).toBe(-1);
   });
