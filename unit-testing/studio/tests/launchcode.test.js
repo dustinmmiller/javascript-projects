@@ -21,9 +21,13 @@ describe("Testing launchcode", function(){
 
   test("launchcode object has programsOffered: ['Web Development', 'Data Analysis', 'Liftoff']", function() { 
     let result = launchcode;
-    expect(result.programsOffered).toContain("Web Development");
+    let arrTest = ['Web Development', 'Data Analysis', 'Liftoff'];
+    for(let i = 0; i < result.programsOffered.length; i++){
+      expect(result.programsOffered[i]).toEqual(arrTest[i]);
+    };
+    /*expect(result.programsOffered).toContain("Web Development");
     expect(result.programsOffered).toContain("Data Analysis");
-    expect(result.programsOffered).toContain("Liftoff");
+    expect(result.programsOffered).toContain("Liftoff");*/
     expect(result.programsOffered.length).toEqual(3);
   });
 
