@@ -6,6 +6,7 @@ function gradeLabs(labs) {
       result = lab.runLab(3);
     } catch(err) {
       result = "Error Thrown";
+      console.log(result + ": runLab propery is not defined.");
     }
       console.log(`${lab.student} code worked: ${result === 27}`);
   }
