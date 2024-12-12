@@ -4,6 +4,7 @@ class Astronaut {
      this.name = name;
      this.age = age;
      this.mass = mass;
+     this.time = 'now';
    }
 }
 
