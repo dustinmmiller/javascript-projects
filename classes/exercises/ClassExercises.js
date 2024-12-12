@@ -40,7 +40,8 @@ class Novel extends Book{
 
 // Declare the objects for exercises 2 and 3 here:
 let prideAndPrejudice = new Novel('Pride and Prejudice', 'Jane Austen', 1813, 1111111111111, 432, 32, 'No');  
-let shuttleBuild = new Manual('Top Secret Shuttle Building Manual', 'Redacted', 2013, 0000000000000, 1147, 1, 'No'); 
+let shuttleBuild = new Manual('Top Secret Shuttle Building Manual', 'Redacted', 2013, '0000000000000', 1147, 1, 'No'); 
 // Code exercises 4 & 5 here:
 shuttleBuild.discard();
 prideAndPrejudice.checkout(5);
+console.log(Book, Novel, Manual, prideAndPrejudice, shuttleBuild);
