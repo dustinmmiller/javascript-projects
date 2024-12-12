@@ -19,3 +19,7 @@ console.log(fox);
 console.log(fox.age, fox.color);
 
 //Try modifying or adding properties below.
+fox.speed = 3;
+console.log(fox);
+fox.name = 'Jeff';
+console.log(fox);
