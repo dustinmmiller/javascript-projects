@@ -11,9 +11,12 @@ function init () {
     const leftButton = document.getElementById("left");
     const rightButton = document.getElementById("right");
     let rocketShip = document.getElementById("rocket");
+    const move = 10;
     rocketShip.style.position = "absolute";
-    rocketShip.style.left =  150 + "px";
-    rocketShip.style.top = 250 + "px";
+    const rocketLeft = (shuttleBackDrop.offsetWidth - rocketShip.offsetWidth) / 2;
+    const rocketTop = (shuttleBackDrop.offsetHeight - rocketShip.offsetHeight);
+    rocketShip.style.left = rocketLeft + "px";
+    rocketShip.style.top = rocketTop + "px";
     let takeOffClearance = false;
 
     button.addEventListener("click", function (event) {
@@ -23,7 +26,6 @@ function init () {
             shuttleBackDrop.style.backgroundColor = "blue";
             shuttleHeight.innerHTML = 10000;
             takeOffClearance = true;
-            rocketShip.style.top = 240 + "px"; //doesnt ask for it but i think this should be here if its climbing 10000 feet as per the instructions.
         }
     });
 
@@ -32,8 +34,8 @@ function init () {
         paragraph.innerHTML = "The shuttle has landed.";
         shuttleBackDrop.style.backgroundColor = "green";
         shuttleHeight.innerHTML = 0;
-        rocketShip.style.left =  150 + "px";
-        rocketShip.style.top = 250 + "px";
+        rocketShip.style.left = rocketLeft + "px";
+        rocketShip.style.top = rocketTop + "px";
         takeOffClearance = false;
     });
 
@@ -43,8 +45,8 @@ function init () {
             paragraph.innerHTML = "Mission aborted.";
             shuttleBackDrop.style.backgroundColor = "green";
             shuttleHeight.innerHTML = 0;
-            rocketShip.style.left =  150 + "px";
-            rocketShip.style.top = 250 + "px";
+            rocketShip.style.left = rocketLeft + "px";
+            rocketShip.style.top = rocketTop + "px";
             takeOffClearance = false;
         }
     });
@@ -55,31 +57,31 @@ function init () {
         if (otherTemp > 0 && takeOffClearance === true) {
             temp += 10000;
             shuttleHeight.innerHTML = temp;
-            rocketShip.style.top = (otherTemp - 10) + "px";
+            rocketShip.style.top = (otherTemp - move) + "px";
         }
     });
 
     downButton.addEventListener("click", function (event) {
         let temp = parseInt(shuttleHeight.innerHTML);
         let otherTemp = parseInt(rocketShip.style.top);
-        if (otherTemp < 250 && takeOffClearance === true) {
+        if (otherTemp < rocketTop && takeOffClearance === true) {
             temp -= 10000;
             shuttleHeight.innerHTML = temp;
-            rocketShip.style.top = (otherTemp + 10) + "px";
+            rocketShip.style.top = (otherTemp + move) + "px";
         }
     });
 
     rightButton.addEventListener("click", function (event) {
         let temp = parseInt(rocketShip.style.left);
-        if (temp < 320 && takeOffClearance === true){
-            rocketShip.style.left = (temp + 10) + "px";
+        if (temp < rocketLeft*2 && takeOffClearance === true){
+            rocketShip.style.left = (temp + move) + "px";
         }
     });
 
     leftButton.addEventListener("click", function (event) {
         let temp = parseInt(rocketShip.style.left);
-        if (temp > -20 && takeOffClearance === true){
-            rocketShip.style.left = (temp - 10) + "px"; 
+        if (temp > 0 && takeOffClearance === true){
+            rocketShip.style.left = (temp - move) + "px"; 
         }
     });
 }
