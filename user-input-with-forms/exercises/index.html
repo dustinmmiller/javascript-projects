@@ -10,7 +10,7 @@
   <script>
     window.addEventListener("load", function() {
       let form = document.querySelector("form");
-      form.addEventListener("submit", function() {
+      form.addEventListener("submit", function(event) {
         let testNameInput = document.querySelector("input[name=testName]");
         let testDateInput = document.querySelector("input[name=testDate]");
         let rocketTypeInput = document.querySelector("select[name=rocketType]");
